@@ -154,9 +154,9 @@ A: Unless specifically instructed by your manager, customer information is not r
 
 If you encounter any issues not covered in this manual, please contact:
 
-**Manager:** [Manager Name]
-**Phone:** [Phone Number]
-**Email:** [Email Address]
+**Manager:** Muzammil Ibrahim
+**Phone:** +91-7025422126
+**Email:** muzammilibrahim13@gmail.com
 
 ---
 
