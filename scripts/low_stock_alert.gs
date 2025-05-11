@@ -1,21 +1,44 @@
 function checkLowStock() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Stock");
-  const data = sheet.getDataRange().getValues();
-  let alertMessage = "⚠️ Low Stock Alert\n\n";
-
-  for (let i = 1; i < data.length; i++) {
-    const item = data[i][0];
-    const quantity = Number(data[i][1]);
-    if (quantity <= 5) {
-      alertMessage += `- ${item}: Only ${quantity} left\n`;
+  // Get the active spreadsheet
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var inventorySheet = ss.getSheetByName("Inventory");
+  
+  // Get inventory data
+  var inventoryData = inventorySheet.getDataRange().getValues();
+  
+  // Find items below threshold
+  var lowStockItems = [];
+  
+  for (var i = 1; i < inventoryData.length; i++) {
+    var itemName = inventoryData[i][0];
+    var currentStock = inventoryData[i][1];
+    var threshold = inventoryData[i][2];
+    
+    if (currentStock <= threshold) {
+      lowStockItems.push({
+        item: itemName,
+        stock: currentStock,
+        threshold: threshold
+      });
     }
   }
-
-  if (alertMessage !== "⚠️ Low Stock Alert\n\n") {
+  
+  // If there are low stock items, send an alert
+  if (lowStockItems.length > 0) {
+    var emailBody = "⚠️ Low Stock Alert ⚠️\n\n";
+    emailBody += "The following items are running low:\n\n";
+    
+    for (var j = 0; j < lowStockItems.length; j++) {
+      emailBody += "- " + lowStockItems[j].item + ": " + 
+                  lowStockItems[j].stock + " remaining (Threshold: " + 
+                  lowStockItems[j].threshold + ")\n";
+    }
+    
+    // Send the email
     MailApp.sendEmail({
-      to: "muzammilibrahim13@gmail.com",
-      subject: "⚠️ Low Stock Alert",
-      body: alertMessage
+      to: "your-email@example.com",
+      subject: "Low Stock Alert - Action Required",
+      body: emailBody
     });
   }
 }
