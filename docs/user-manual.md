@@ -160,4 +160,4 @@ If you encounter any issues not covered in this manual, please contact:
 
 ---
 
-*This user manual is for internal use by staff members of [Your Business Name].*
+*This user manual is for internal use by staff members of [Parekkattil Agencies].*
