@@ -1,62 +1,63 @@
 # 🧾 Daily Sales Log Automation for Family Retail Business
 
-A simple tool to **digitally record**, **track**, and **automate** daily sales entries in a small retail shop. Built using **Google Forms**, **Google Sheets**, and optionally **Google Apps Script** for automation.
+A simple tool to **digitally record**, **track**, and **automate** daily sales entries in a small retail shop. Built using **Google Forms**, **Google Sheets**, and **Google Apps Script** for automation.
 
-## 💡 Problem
+## 💡 Problem & Solution
 
-Sales are manually recorded in notebooks, leading to:
-- Human error in totals
-- Difficulty tracking daily/weekly revenue
-- Time-consuming manual review
+### The Problem
+Sales are manually recorded in notebooks, leading to human error, difficulty tracking revenue, and time-consuming reviews.
 
-## ✅ Solution
-
-This project provides a **mobile-friendly** form to log each sale and auto-generates:
-- Daily sales totals
-- Clean tabular history
-- Optional email/WhatsApp reports
-
-## 🛠️ Tools Used
-
-- **Google Forms** – for easy mobile input
-- **Google Sheets** – to store and process data
-- **Google Apps Script** (optional) – to automate report emails
-- *(Can later extend to React or Firebase POS UI)*
+### The Solution
+This project provides a **mobile-friendly** form to log each sale and auto-generates daily totals, clean tabular history, and automated reports.
 
 ## 📦 Features
 
 - 📱 Form-based input: Item, Quantity, Price, Date
 - 📊 Auto-calculated totals and summaries
-- ⚠️ Low stock alert (via conditional formatting or script)
-- 📤 Optional daily email report (via script)
+- ⚠️ Low stock alert system
+- 📤 Daily email report automation
 - 🔒 No login required for staff, mobile-first setup
 
-## 🧪 How to Use
+## 🚀 Quick Start Guide
 
-1. **Create a Google Form**  
-   Fields: Item Name, Quantity, Price, Date
+1. **Create a Google Form** with fields: Item Name, Quantity, Price
+2. **Connect to Google Sheets** via Responses > Create Spreadsheet
+3. **Copy the Apps Script code** from the examples in the setup guide
+4. **Set up triggers** for daily reports and low stock alerts
+5. **Share the form link** with your staff
 
-2. **Connect to Google Sheets**  
-   Go to `Responses` > Click `Create Spreadsheet`.
+For detailed instructions, see the [Setup Guide](docs/setup-guide.md).
 
-3. **Add Formulas to Sheet**  
-   - Sum daily revenue
-   - Weekly report with `SUMIFS` or pivot table
+## 🏗️ Project Architecture
 
-4. *(Optional)* **Set up Automation**
-   - Use `Apps Script` → Create report function
-   - Trigger it to run daily using time-based triggers
-
-## 📈 Example Output
-
-```text
-Daily Sales Summary - 11 May 2025
-
-Total Items Sold: 42
-Total Revenue: ₹8,350
-Top Item: Milk Packet (Qty: 10)
-Low Stock Alerts: Eggs, Bread
 ```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Google Form   │────▶│  Google Sheets  │────▶│   Apps Script   │
+│  (Data Entry)   │     │  (Data Storage) │     │  (Automation)   │
+└─────────────────┘     └─────────────────┘     └────────┬────────┘
+                                                         │
+                                                         ▼
+                                                ┌─────────────────┐
+                                                │  Email Reports  │
+                                                │   & Alerts      │
+                                                └─────────────────┘
+```
+
+## 🔧 Key Components
+
+- **Google Forms** – Mobile-friendly data entry
+- **Google Sheets** – Data storage and calculations
+- **Apps Script** – Automation for reports and alerts
+
+## 🔍 Troubleshooting
+
+For common issues and solutions, see the [Setup Guide](docs/setup-guide.md#troubleshooting-tips).
+
+## ⚙️ Technical Requirements
+
+- **Google Account**: Free personal account is sufficient
+- **Permissions**: Forms, Sheets, Apps Script, Gmail
+- **Device Compatibility**: Works on any device with a web browser
 
 ## 🚀 Future Scope
 - React frontend for POS-style input
@@ -64,9 +65,7 @@ Low Stock Alerts: Eggs, Bread
 - Staff-wise login and performance tracking
 - QR-based item entry
 
-## 🙌 Author
-Muzammil Ibrahim
-Self-taught full stack & devops learner, helping small businesses go digital.
+## 📎 Credits & License
+Built by Muzammil Ibrahim for automating a family retail business using cloud tools and scripting.
 
-## 📄 License
-MIT License – Use freely, modify, and contribute!
+[MIT License](LICENSE) – Use freely, modify, and contribute!
