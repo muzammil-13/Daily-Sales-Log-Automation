@@ -1,0 +1,20 @@
+daily-sales-log-automation/
+├── README.md
+├── .env.example                  # If using API keys (e.g., for WhatsApp automation)
+├── docs/
+│   ├── setup-guide.md           # Step-by-step setup with screenshots
+│   └── user-manual.md           # For family/staff usage instructions
+├── scripts/
+│   └── daily_report.gs          # Google Apps Script for daily report
+│   └── low_stock_alert.gs       # Optional: alert for stock threshold
+├── assets/
+│   ├── form-screenshot.png
+│   └── sample-dashboard.png
+├── google/
+│   ├── form-template-url.txt    # Link to the sales entry form
+│   └── sheet-template-url.txt   # Link to connected response sheet
+├── automation/
+│   └── triggers.md              # List of active Google Script triggers
+└── future/
+    ├── pos-app/                 # Placeholder for a React or Firebase POS UI
+    └── dashboard/               # For Data Studio or visualization mockups
