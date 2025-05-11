@@ -1,0 +1,13 @@
+[🛒 User Input - Google Form]
+         ↓
+[📊 Google Sheet: Sales Log]
+         ↓
+[⚙️ Script (Optional)]
+ - Daily summary report
+ - Low stock alert
+ - Data cleaning or transformation
+         ↓
+[📤 Outputs]
+ - Email summary
+ - WhatsApp alert
+ - Dashboard visualization
