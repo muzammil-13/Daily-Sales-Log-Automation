@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Sales Log Automation - Documentation</title>
+    <style>
+        /* Basic responsive styling */
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: var(--light-bg);
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .steps-list {
+            list-style-type: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        
+        .steps-list li {
+            counter-increment: step-counter;
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .links-section a {
+            display: inline-block;
+            margin-right: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .links-section a:hover {
+            background-color: #3367d6;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with project title and description -->
+    <header>
+        <h1>🧾 Daily Sales Log Automation</h1>
+        <p class="tagline">Simplify your retail business operations</p>
+        <p>A simple tool to <strong>digitally record</strong>, <strong>track</strong>, and <strong>automate</strong> daily sales entries in a small retail shop. Built using Google Forms, Google Sheets, and optionally Google Apps Script for automation.</p>
+    </header>
+    
+    <!-- Quick Start section -->
+    <section id="quick-start">
+        <h2>🚀 Quick Start Guide</h2>
+        <ol class="steps-list">
+            <li><strong>Create a Google Form</strong> with fields: Item Name, Quantity, Price</li>
+            <li><strong>Connect to Google Sheets</strong> via Responses > Create Spreadsheet</li>
+            <li><strong>Copy the Apps Script code</strong> from the examples in the setup guide</li>
+            <li><strong>Set up triggers</strong> for daily reports and low stock alerts</li>
+            <li><strong>Share the form link</strong> with your staff</li>
+        </ol>
+        <p>For detailed instructions, see the <a href="setup-guide.md">Setup Guide</a>.</p>
+    </section>
+    
+    <!-- Features section -->
+    <section id="features">
+        <h2>📦 Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📱 Mobile-Friendly Input</h3>
+                <p>Form-based input for Item, Quantity, Price, and Date that works on any device.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Automated Calculations</h3>
+                <p>Auto-calculated totals and summaries without manual data entry.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚠️ Low Stock Alerts</h3>
+                <p>Automatic notifications when inventory items run low.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📤 Daily Reports</h3>
+                <p>Automated email reports summarizing daily sales activity.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 No Login Required</h3>
+                <p>Simple access for staff with no complicated authentication.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Sales Tracking</h3>
+                <p>Monitor trends and performance over time with historical data.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Architecture section -->
+    <section id="architecture">
+        <h2>🏗️ Project Architecture</h2>
+        <pre>
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Google Form   │────▶│  Google Sheets  │────▶│   Apps Script   │
+│  (Data Entry)   │     │  (Data Storage) │     │  (Automation)   │
+└─────────────────┘     └─────────────────┘     └────────┬────────┘
+                                                         │
+                                                         ▼
+                                                ┌─────────────────┐
+                                                │  Email Reports  │
+                                                │   & Alerts      │
+                                                └─────────────────┘
+        </pre>
+    </section>
+    
+    <!-- Links section -->
+    <section id="links" class="links-section">
+        <h2>🔗 Resources</h2>
+        <a href="setup-guide.md">Setup Guide</a>
+        <a href="https://github.com/muzammil-13/Daily-Sales-Log-Automation" target="_blank">GitHub Repository</a>
+        <a href="#troubleshooting">Troubleshooting Tips</a>
+    </section>
+    
+    <!-- Technical Requirements section -->
+    <section id="requirements">
+        <h2>⚙️ Technical Requirements</h2>
+        <ul>
+            <li><strong>Google Account</strong>: Free personal account is sufficient</li>
+            <li><strong>Permissions</strong>: Forms, Sheets, Apps Script, Gmail</li>
+            <li><strong>Device Compatibility</strong>: Works on any device with a web browser</li>
+        </ul>
+    </section>
+    
+    <!-- Future Scope section -->
+    <section id="future">
+        <h2>🔮 Future Scope</h2>
+        <ul>
+            <li>React frontend for POS-style input</li>
+            <li>Firebase/Firestore for multi-user sync</li>
+            <li>Staff-wise login and performance tracking</li>
+            <li>QR-based item entry</li>
+        </ul>
+    </section>
+    
+    <!-- Footer section -->
+    <footer>
+        <p>Built by Muzammil Ibrahim for automating a family retail business using cloud tools and scripting.</p>
+        <p>MIT License – Use freely, modify, and contribute!</p>
+    </footer>
+</body>
+</html>
